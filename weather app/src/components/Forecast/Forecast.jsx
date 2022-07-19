@@ -1,6 +1,9 @@
 import React from 'react';
 import './Forecast.css';
-import '../assets/';
+import cloudy from '../../assets/cloudy.png';
+import rain from '../../assets/rain.png';
+import clear from '../../assets/clear.png';
+import shower from '../../assets/shower.png';
 
 export default class Forecast extends React.Component {
     constructor(props) {
@@ -21,16 +24,25 @@ export default class Forecast extends React.Component {
                     data["dataseries"].map((data) => {
                         tmp.push(
                             <div className="card" key={data["date"]}>
-                                <div class="date">Datum: {this.formatDate(data["date"].toString())}</div> 
-                                <div>| Wetter: <img src={this.formatDate(data["weather"])}></img></div>
-                                <div className="temps">
-                                    <div>
-                                        Mindesttemperatur: {data["temp2m"]["min"]}
+
+                                <div className="date">
+                                    Datum: {this.formatDate(data["date"].toString())}
+                                </div> 
+                                <div className="info-container">
+                                    <div className="weather">
+                                        Wetter: {this.getWeatherIcon(data["weather"])}
                                     </div>
-                                    <div>
-                                        Maximaltemperatur: {data["temp2m"]["max"]}
+
+                                    <div className="temps">
+                                        <div>
+                                            Mindesttemperatur: {data["temp2m"]["min"]}
+                                        </div>
+                                        <div>
+                                            Maximaltemperatur: {data["temp2m"]["max"]}
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
                         );
                     });
@@ -51,10 +63,11 @@ export default class Forecast extends React.Component {
     getWeatherIcon(weather) {
         weather = weather.toString();
         switch(weather) {
-            case "clear": return clear;
-            case "ishower": return shower;
-            case "rain": return rain;
-            case "cloudy": return cloudy;
+            case "clear": return <img src={clear} width="32" height="32" />;
+            case "ishower": return <img src={shower} width="32" height="32" />;
+            case "rain": return <img src={rain} width="32" height="32" />;
+            case "cloudy": return <img src={cloudy} width="32" height="32" />;
+            case "mcloudy": return <img src={cloudy} width="32" height="32" />;
         }
     }
 

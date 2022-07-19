@@ -1,0 +1,32 @@
+.forecast {
+    background-color: #f1f1f1;
+
+}
+
+.card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.temps {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    vertical-align: center;
+}
+
+.info-container {
+    display: flex;
+}
+
+.weather {
+    place-items: center;
+    vertical-align: center;
+    padding-right: 1rem;
+}
