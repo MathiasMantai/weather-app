@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7f2bfd45-60a9-483d-b931-fd4d8d3c43d5/deploy-status)](https://app.netlify.com/sites/weather-app-it0823/deploys)
