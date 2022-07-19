@@ -1,9 +1,9 @@
 import React from 'react';
 import './Forecast.css';
-import cloudy from '../../assets/cloudy.png';
-import rain from '../../assets/rain.png';
-import clear from '../../assets/clear.png';
-import shower from '../../assets/shower.png';
+import cloudy from './assets/cloudy.png';
+import rain from './assets/rain.png';
+import clear from './assets/clear.png';
+import shower from './assets/shower.png';
 
 export default class Forecast extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ export default class Forecast extends React.Component {
                     let tmp = [];
                     data["dataseries"].map((data) => {
                         tmp.push(
-                            <div className=" bg-blue-400 shadow-lg border-box m-5 w-2/3 sm:w-fit p-5 rounded-md" key={data["date"]}>
+                            <div className=" bg-blue-400 text-white shadow-lg border-box m-5 w-2/3 sm:w-fit p-5 rounded-md" key={data["date"]}>
 
                                 <div className="date">
                                     Datum: {this.formatDate(data["date"].toString())}
@@ -42,7 +42,7 @@ export default class Forecast extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-
+                                
                             </div>
                         );
                     });
@@ -73,7 +73,7 @@ export default class Forecast extends React.Component {
 
     render() {
         return (
-            <div className=" forecast grid grid-cols-1 content-evenly sm:grid-cols-2 lg:grid-cols-6 col-span-1 items-center margin-auto">
+            <div className=" forecast grid place-items-center grid-cols-1 content-evenly sm:grid-cols-2 lg:grid-cols-6 col-span-2 items-center margin-auto">
                 {this.state.output}
             </div>
         )
