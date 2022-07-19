@@ -18,7 +18,7 @@ export default class Forecast extends React.Component {
         if(navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 let geoData = [position.coords.longitude, position.coords.latitude];
-                fetch('http://www.7timer.info/bin/api.pl?lon='+geoData[0]+'&lat='+geoData[1]+'&product=civillight&output=json&unit=metric').then((response) => response.json()).then(data => {
+                fetch('https://www.7timer.info/bin/api.pl?lon='+geoData[0]+'&lat='+geoData[1]+'&product=civillight&output=json&unit=metric').then((response) => response.json()).then(data => {
                     console.log(data);
                     let tmp = [];
                     data["dataseries"].map((data) => {
