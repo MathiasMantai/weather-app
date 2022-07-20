@@ -5,7 +5,7 @@ import rain from './assets/rain.png';
 import clear from './assets/clear.png';
 import shower from './assets/shower.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faCloud, faCloudBolt, faSunCloud} from '@fortawesome/free-solid-svg-icons'
+import { faSun, faCloud} from '@fortawesome/free-solid-svg-icons'
 
 export default class Forecast extends React.Component {
     constructor(props) {
