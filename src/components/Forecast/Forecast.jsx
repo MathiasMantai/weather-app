@@ -4,6 +4,8 @@ import cloudy from './assets/cloudy.png';
 import rain from './assets/rain.png';
 import clear from './assets/clear.png';
 import shower from './assets/shower.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSun, faCloud, faCloudBolt, faSunCloud} from '@fortawesome/free-solid-svg-icons'
 
 export default class Forecast extends React.Component {
     constructor(props) {
@@ -63,12 +65,12 @@ export default class Forecast extends React.Component {
     getWeatherIcon(weather) {
         weather = weather.toString();
         switch(weather) {
-            case "clear": return <img src={clear} width="32" height="32" />;
-            case "ishower": return <img src={shower} width="32" height="32" />;
-            case "rain": return <img src={rain} width="32" height="32" />;
-            case "cloudy": return <img src={cloudy} width="32" height="32" />;
+            case "clear": return <FontAwesomeIcon icon={faSun} size="3x" />;
+            case "ishower": return <FontAwesomeIcon icon={faCloud} size="3x"/>;
+            case "rain": return <FontAwesomeIcon icon="fa-solid fa-cloud-drizzle" size="3x" />;
+            case "cloudy": return <FontAwesomeIcon icon={faCloud} size="3x" />;
             case "mcloudy": return <img src={cloudy} width="32" height="32" />;
-            case "pcloudy": return <img src={cloudy} width="32" height="32" />;
+            case "pcloudy": return <FontAwesomeIcon icon="fa-solid fa-sun-cloud" />;
         }
     }
 
