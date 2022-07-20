@@ -35,10 +35,10 @@ export default class Forecast extends React.Component {
 
                                     <div className="temps">
                                         <div>
-                                            Mindesttemperatur: {data["temp2m"]["min"]}
+                                            Mindesttemperatur: {data["temp2m"]["min"]} °C
                                         </div>
                                         <div>
-                                            Maximaltemperatur: {data["temp2m"]["max"]}
+                                            Maximaltemperatur: {data["temp2m"]["max"]} °C
                                         </div>
                                     </div>
                                 </div>
