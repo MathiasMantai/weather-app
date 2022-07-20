@@ -68,6 +68,7 @@ export default class Forecast extends React.Component {
             case "rain": return <img src={rain} width="32" height="32" />;
             case "cloudy": return <img src={cloudy} width="32" height="32" />;
             case "mcloudy": return <img src={cloudy} width="32" height="32" />;
+            case "pcloudy": return <img src={cloudy} width="32" height="32" />;
         }
     }
 
