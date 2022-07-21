@@ -2,7 +2,7 @@ import React from 'react';
 import './Forecast.css';
 import cloudy from './assets/cloudy.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faCloud} from '@fortawesome/free-solid-svg-icons'
+import { faSun, faCloud, faCloudRain, faCloudShowersHeavy} from '@fortawesome/free-solid-svg-icons'
 
 export default class Forecast extends React.Component {
     constructor(props) {
@@ -22,7 +22,7 @@ export default class Forecast extends React.Component {
                     let tmp = [];
                     data["dataseries"].map((data) => {
                         tmp.push(
-                            <div className=" bg-blue-400 text-white shadow-lg border-box m-5 w-2/3 sm:w-fit p-5 rounded-md" key={data["date"]}>
+                            <div className=" bg-blue-400 text-white shadow-lg border-box m-5 w-80 sm:w-fit p-5 rounded-md" key={data["date"]}>
 
                                 <div className="date">
                                     Datum: {this.formatDate(data["date"].toString())}
@@ -64,7 +64,8 @@ export default class Forecast extends React.Component {
         switch(weather) {
             case "clear": return <FontAwesomeIcon icon={faSun} size="3x" />;
             case "ishower": return <FontAwesomeIcon icon={faCloud} size="3x"/>;
-            case "rain": return <FontAwesomeIcon icon="fa-solid fa-cloud-drizzle" size="3x" />;
+            case "lightrain": return <FontAwesomeIcon icon={faCloudRain} size="3x" />;          
+            case "rain": return <FontAwesomeIcon icon={faCloudShowersHeavy} size="3x" />;
             case "cloudy": return <FontAwesomeIcon icon={faCloud} size="3x" />;
             case "mcloudy": return <img src={cloudy} width="32" height="32" />;
             case "pcloudy": return <FontAwesomeIcon icon="fa-solid fa-sun-cloud" />;
