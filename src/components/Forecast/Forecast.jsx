@@ -1,9 +1,6 @@
 import React from 'react';
 import './Forecast.css';
 import cloudy from './assets/cloudy.png';
-import rain from './assets/rain.png';
-import clear from './assets/clear.png';
-import shower from './assets/shower.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faCloud} from '@fortawesome/free-solid-svg-icons'
 

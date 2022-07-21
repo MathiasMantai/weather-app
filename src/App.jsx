@@ -5,7 +5,7 @@ import Header from './components/Header/Header';
 
 function App() {
     return (
-        <div className="App bg-zinc-300">
+        <div className="App bg-zinc-100">
             <Header />
             <Forecast />
             <Footer />
