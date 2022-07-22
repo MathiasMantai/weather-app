@@ -1,23 +1,23 @@
 import React from 'react';
+import { unmountComponentAtNode } from 'react-dom';
 import './Forecast.css';
-import cloudy from './assets/cloudy.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faCloud, faCloudRain, faCloudShowersHeavy, faCloudSun} from '@fortawesome/free-solid-svg-icons'
+import Loader from '../Loader/Loader';
 
 export default class Forecast extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             weatherData: "",
-            output: []
+            output: [],
+            loader: <Loader />
         }
     }
-    
-    componentDidMount() {
-        if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                let geoData = [position.coords.longitude, position.coords.latitude];
-                fetch('https://www.7timer.info/bin/api.pl?lon='+geoData[0]+'&lat='+geoData[1]+'&product=civillight&output=json&unit=metric').then((response) => response.json()).then(data => {
+
+    async getWeatherData(geoData) {
+        const response = await fetch('https://www.7timer.info/bin/api.pl?lon='+geoData[0]+'&lat='+geoData[1]+'&product=civillight&output=json&unit=metric');
+        const json = await response.json().then(data => {
                     console.log(data);
                     let tmp = [];
                     data["dataseries"].map((data) => {
@@ -45,9 +45,17 @@ export default class Forecast extends React.Component {
                             </div>
                         );
                     });
+                    this.setState({loader: ""});
                     this.setState({output: tmp});
                     // console.log(this.state.output);
                 });
+    }
+    
+    async componentDidMount() {
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                let geoData = [position.coords.longitude, position.coords.latitude];
+                this.getWeatherData(geoData);
             });
         }
         else {
@@ -75,6 +83,7 @@ export default class Forecast extends React.Component {
     render() {
         return (
             <div className=" forecast grid place-items-center grid-cols-1 content-evenly sm:grid-cols-2 lg:grid-cols-6 col-span-2 items-center margin-auto">
+                {this.state.loader}
                 {this.state.output}
             </div>
         )

@@ -15,5 +15,4 @@ export default class Footer extends React.Component {
             </div>
         )
     }
-
 }
