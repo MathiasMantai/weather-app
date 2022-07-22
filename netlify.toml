@@ -1,2 +1,3 @@
 [[headers]]
+    for="src/main.jsx"
     Access-Control-Allow-Origin = "*"
