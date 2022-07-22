@@ -2,7 +2,7 @@ import React from 'react';
 import './Forecast.css';
 import cloudy from './assets/cloudy.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faCloud, faCloudRain, faCloudShowersHeavy} from '@fortawesome/free-solid-svg-icons'
+import { faSun, faCloud, faCloudRain, faCloudShowersHeavy, faCloudSun} from '@fortawesome/free-solid-svg-icons'
 
 export default class Forecast extends React.Component {
     constructor(props) {
@@ -66,9 +66,9 @@ export default class Forecast extends React.Component {
             case "ishower": return <FontAwesomeIcon icon={faCloud} size="3x"/>;
             case "lightrain": return <FontAwesomeIcon icon={faCloudRain} size="3x" />;          
             case "rain": return <FontAwesomeIcon icon={faCloudShowersHeavy} size="3x" />;
-            case "cloudy": return <FontAwesomeIcon icon={faCloud} size="3x" />;
-            case "mcloudy": return <img src={cloudy} width="32" height="32" />;
-            case "pcloudy": return <FontAwesomeIcon icon="fa-solid fa-sun-cloud" />;
+            case "cloudy": return <FontAwesomeIcon icon={faCloud} size="3x"/>;
+            case "mcloudy": return <FontAwesomeIcon icon={faCloud} size="3x"/>;
+            case "pcloudy": return <FontAwesomeIcon icon={faCloudSun} size="3x"/>;
         }
     }
 

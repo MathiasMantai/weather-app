@@ -1,4 +1,6 @@
 import React from 'react';
+import Github from '../icons/Github';
+import Twitter from '../icons/Twitter';
 
 export default class Footer extends React.Component {
     render() {
@@ -7,8 +9,8 @@ export default class Footer extends React.Component {
             <div >
                 Copyright&copy; 2022 Mathias Mantai
             </div>
-            <div>
-                Github Twitter Youtube
+            <div className="flex">
+                <a href="https://github.com/MathiasMantai"><Github /></a> <Twitter />
             </div>
             </div>
         )
