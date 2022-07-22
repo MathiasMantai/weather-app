@@ -1,5 +1,4 @@
 import React from 'react';
-import { unmountComponentAtNode } from 'react-dom';
 import './Forecast.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faCloud, faCloudRain, faCloudShowersHeavy, faCloudSun} from '@fortawesome/free-solid-svg-icons'
@@ -51,9 +50,9 @@ export default class Forecast extends React.Component {
                 });
     }
     
-    async componentDidMount() {
+    componentDidMount() {
         if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
+            navigator.geolocation.watchPosition((position) => {
                 let geoData = [position.coords.longitude, position.coords.latitude];
                 this.getWeatherData(geoData);
             });
