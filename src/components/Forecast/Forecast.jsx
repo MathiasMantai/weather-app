@@ -52,7 +52,7 @@ export default class Forecast extends React.Component {
     
     componentDidMount() {
         if(navigator.geolocation) {
-            navigator.geolocation.watchPosition((position) => {
+            navigator.geolocation.getCurrentPosition((position) => {
                 let geoData = [position.coords.longitude, position.coords.latitude];
                 this.getWeatherData(geoData);
             });
