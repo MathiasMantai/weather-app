@@ -8,8 +8,8 @@ export default class Header extends React.Component {
 
     render() {
         return (
-            <div className="bg-blue-400 grid  place-content-center  text-white p-1">
-                <h1 className="text-xl text-center border border-white rounded-lg w-fit p-1">
+            <div className="bg-blue-400 grid text-white p-1 h-[20%]">
+                <h1 className="text-xl rounded-lg w-fit p-1 ml-4 font-bold">
                     Wetter
                 </h1>
             </div>

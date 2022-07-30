@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 
 function App() {
     return (
-        <div className="bg-zinc-100">
+        <div className="bg-zinc-100 h-full flex flex-col">
             <Header />
             <Forecast />
             <Footer />

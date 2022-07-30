@@ -81,9 +81,15 @@ export default class Forecast extends React.Component {
 
     render() {
         return (
+            <div className='h-[60%]'>
+                <div className="grid place-items-center ">
+                    {this.state.loader}
+                </div>
+
+            
             <div className=" forecast grid place-items-center grid-cols-1 content-evenly sm:grid-cols-2 lg:grid-cols-6 col-span-2 items-center margin-auto">
-                {this.state.loader}
                 {this.state.output}
+            </div>
             </div>
         )
     }
